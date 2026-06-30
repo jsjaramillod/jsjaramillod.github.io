@@ -1,17 +1,45 @@
 [
   {
-    "objectID": "writing.html",
-    "href": "writing.html",
-    "title": "Writing",
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
     "section": "",
-    "text": "Short notes on mathematics, statistics, econometrics, and quantitative modeling."
+    "text": "You can download my current CV here:\nDownload CV"
   },
   {
-    "objectID": "writing.html#planned-notes",
-    "href": "writing.html#planned-notes",
-    "title": "Writing",
-    "section": "Planned Notes",
-    "text": "Planned Notes\n\nWhat is Markov Chain Monte Carlo?\nWhy Hamiltonian Monte Carlo Works\nA Short Introduction to Time Series Forecasting\nBootstrap Inference in Causal Designs\nFrom Probability Theory to Quantitative Finance"
+    "objectID": "cv.html#summary",
+    "href": "cv.html#summary",
+    "title": "CV",
+    "section": "Summary",
+    "text": "Summary\nPh.D. candidate in Mathematics with research experience in probability, Markov chain Monte Carlo, Hamiltonian Monte Carlo, and stochastic modeling. Additional training in econometrics, time series, causal inference, machine learning, and quantitative finance."
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "CV",
+    "section": "Education",
+    "text": "Education\nPh.D. in Mathematics\nUniversity of Oregon\nExpected completion: 2026\nM.Sc. in Economics\nUniversity of Oregon"
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "CV",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nPython, R, SQL\n\nProbability and stochastic processes\n\nTime series and forecasting\n\nEconometrics and causal inference\n\nMachine learning\n\nBayesian modeling\n\nMonte Carlo methods\n\nNumerical optimization\n\nLaTeX, Git, GitHub"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Sebastian Jaramillo\nI am a Ph.D. candidate in Mathematics at the University of Oregon. My research lies at the intersection of probability, Markov chain Monte Carlo methods, and the mathematical analysis of sampling algorithms.\nAlongside my doctoral research, I have developed a strong applied interest in time series, econometrics, causal inference, machine learning, and quantitative finance. I am currently building a technical portfolio that translates my mathematical training into applied projects relevant for industry roles.\nMy long-term goal is to work on quantitative problems where rigorous mathematical thinking, statistical modeling, and computational implementation meet."
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "About",
+    "section": "Interests",
+    "text": "Interests\n\nProbability and stochastic processes\n\nMarkov chain Monte Carlo\n\nHamiltonian Monte Carlo\n\nTime series and forecasting\n\nEconometrics and causal inference\n\nQuantitative finance\n\nMachine learning and data science\n\nActuarial and risk modeling"
   },
   {
     "objectID": "projects.html",
@@ -63,45 +91,24 @@
     "text": "I am currently interested in opportunities related to quantitative research, data science, machine learning, actuarial modeling, and financial modeling.\nYou can reach me through:\n\nEmail: jsjaramillodd@gmail.com\nGitHub: github.com/jsjaramillod\nLinkedIn: TU_LINKEDIN_AQUI"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sebastian Jaramillo",
     "section": "",
-    "text": "I am a Ph.D. candidate in Mathematics at the University of Oregon. My research lies at the intersection of probability, Markov chain Monte Carlo methods, and the mathematical analysis of sampling algorithms.\nAlongside my doctoral research, I have developed a strong applied interest in time series, econometrics, causal inference, machine learning, and quantitative finance. I am currently building a technical portfolio that translates my mathematical training into applied projects relevant for industry roles.\nMy long-term goal is to work on quantitative problems where rigorous mathematical thinking, statistical modeling, and computational implementation meet."
+    "text": "Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with research interests in probability, Markov chain Monte Carlo methods, Hamiltonian Monte Carlo, and quantitative modeling."
   },
   {
-    "objectID": "about.html#interests",
-    "href": "about.html#interests",
-    "title": "About",
-    "section": "Interests",
-    "text": "Interests\n\nProbability and stochastic processes\n\nMarkov chain Monte Carlo\n\nHamiltonian Monte Carlo\n\nTime series and forecasting\n\nEconometrics and causal inference\n\nQuantitative finance\n\nMachine learning and data science\n\nActuarial and risk modeling"
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "CV",
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "Writing",
     "section": "",
-    "text": "You can download my current CV here:\nDownload CV"
+    "text": "Short notes on mathematics, statistics, econometrics, and quantitative modeling."
   },
   {
-    "objectID": "cv.html#summary",
-    "href": "cv.html#summary",
-    "title": "CV",
-    "section": "Summary",
-    "text": "Summary\nPh.D. candidate in Mathematics with research experience in probability, Markov chain Monte Carlo, Hamiltonian Monte Carlo, and stochastic modeling. Additional training in econometrics, time series, causal inference, machine learning, and quantitative finance."
-  },
-  {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "CV",
-    "section": "Education",
-    "text": "Education\nPh.D. in Mathematics\nUniversity of Oregon\nExpected completion: 2026\nM.Sc. in Economics\nUniversity of Oregon"
-  },
-  {
-    "objectID": "cv.html#technical-skills",
-    "href": "cv.html#technical-skills",
-    "title": "CV",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\nPython, R, SQL\n\nProbability and stochastic processes\n\nTime series and forecasting\n\nEconometrics and causal inference\n\nMachine learning\n\nBayesian modeling\n\nMonte Carlo methods\n\nNumerical optimization\n\nLaTeX, Git, GitHub"
+    "objectID": "writing.html#planned-notes",
+    "href": "writing.html#planned-notes",
+    "title": "Writing",
+    "section": "Planned Notes",
+    "text": "Planned Notes\n\nWhat is Markov Chain Monte Carlo?\nWhy Hamiltonian Monte Carlo Works\nA Short Introduction to Time Series Forecasting\nBootstrap Inference in Causal Designs\nFrom Probability Theory to Quantitative Finance"
   }
 ]

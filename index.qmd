@@ -5,17 +5,20 @@ subtitle: "Ph.D. Candidate in Mathematics | Probability, MCMC, Time Series, and 
 
 ::: {.grid}
 
+
 ::: {.g-col-12 .g-col-md-8}
 
-Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with research interests in probability, Markov chain Monte Carlo methods, Hamiltonian Monte Carlo, and quantitative modeling.
+![](assets/img/profile.jpg){width="100%"}
 
-My website connects my academic research with applied projects in time series, econometrics, machine learning, and quantitative finance.
+
+
 
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 
-![Sebastian Jaramillo](assets/img/profile.jpg){width="100%"}
+
+Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with research interests in probability, Markov chain Monte Carlo methods, Hamiltonian Monte Carlo, and quantitative modeling.
 
 :::
 
