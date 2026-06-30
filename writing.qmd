@@ -1,0 +1,13 @@
+---
+title: "Writing"
+---
+
+Short notes on mathematics, statistics, econometrics, and quantitative modeling.
+
+## Planned Notes
+
+- What is Markov Chain Monte Carlo?
+- Why Hamiltonian Monte Carlo Works
+- A Short Introduction to Time Series Forecasting
+- Bootstrap Inference in Causal Designs
+- From Probability Theory to Quantitative Finance

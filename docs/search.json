@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "Writing",
+    "section": "",
+    "text": "Short notes on mathematics, statistics, econometrics, and quantitative modeling."
+  },
+  {
+    "objectID": "writing.html#planned-notes",
+    "href": "writing.html#planned-notes",
+    "title": "Writing",
+    "section": "Planned Notes",
+    "text": "Planned Notes\n\nWhat is Markov Chain Monte Carlo?\nWhy Hamiltonian Monte Carlo Works\nA Short Introduction to Time Series Forecasting\nBootstrap Inference in Causal Designs\nFrom Probability Theory to Quantitative Finance"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "This portfolio connects my mathematical training with applied work in time series, econometrics, causal inference, machine learning, and quantitative finance.\nEach project includes code, documentation, and a short explanation of the modeling problem, methodology, and results."
+  },
+  {
+    "objectID": "projects.html#featured-portfolio",
+    "href": "projects.html#featured-portfolio",
+    "title": "Projects",
+    "section": "Featured Portfolio",
+    "text": "Featured Portfolio\n\nTime Series Portfolio\nA unified collection of applied time series projects covering Bayesian modeling, forecasting, dynamic regression, vector autoregressions, and macroeconomic applications.\nRepository: Time-Series\nPlanned modules:\n\nProject 01: Bayesian Modeling for Binary Time Series\n\nProject 02: Forecasting and Dynamic Time Series Models\n\nProject 03: Vector Autoregressions and Impulse Responses\n\nProject 04: Bayesian VARs and Macroeconomic Applications\n\n\n\n\nEconometrics and Causal Inference\nApplied projects involving regression, instrumental variables, regression discontinuity, matching, bootstrap inference, and causal interpretation.\nTopics include:\n\nFuzzy regression discontinuity\n\nTreatment effect estimation\n\nBootstrap uncertainty\n\nPropensity score methods\n\nBayesian causal forests\n\n\n\n\nQuantitative Finance\nProjects connecting stochastic modeling, time series, and financial applications.\nTopics include:\n\nPortfolio construction\n\nHedging strategies\n\nVolatility modeling\n\nRisk analysis\n\nForecasting financial time series\n\n\n\n\nMachine Learning\nMachine learning and deep learning projects with emphasis on mathematical modeling, uncertainty, and applied prediction.\nTopics include:\n\nPredictive modeling\n\nModel evaluation\n\nComputer vision\n\nDeep learning\n\nUncertainty quantification"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My doctoral research focuses on probability and the mathematical analysis of Markov chain Monte Carlo algorithms."
+  },
+  {
+    "objectID": "research.html#hamiltonian-monte-carlo-and-sampling-algorithms",
+    "href": "research.html#hamiltonian-monte-carlo-and-sampling-algorithms",
+    "title": "Research",
+    "section": "Hamiltonian Monte Carlo and Sampling Algorithms",
+    "text": "Hamiltonian Monte Carlo and Sampling Algorithms\nMy current research studies Hamiltonian Monte Carlo-type algorithms, coupling methods, and convergence behavior for probability distributions with geometric structure.\nI am particularly interested in how algorithmic design choices affect mixing, stability, contraction, and convergence rates."
+  },
+  {
+    "objectID": "research.html#selected-research-themes",
+    "href": "research.html#selected-research-themes",
+    "title": "Research",
+    "section": "Selected Research Themes",
+    "text": "Selected Research Themes\n\nHamiltonian Monte Carlo\n\nCoupling and path coupling\n\nMixing times\n\nWasserstein contraction\n\nSampling on manifolds\n\nStrongly log-concave targets\n\nNon-standard kinetic energies\n\nQuantitative convergence bounds"
+  },
+  {
+    "objectID": "research.html#research-to-industry-connection",
+    "href": "research.html#research-to-industry-connection",
+    "title": "Research",
+    "section": "Research-to-Industry Connection",
+    "text": "Research-to-Industry Connection\nAlthough my research is theoretical, the ideas connect naturally to computational statistics, Bayesian inference, simulation, uncertainty quantification, and scalable probabilistic modeling."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "I am currently interested in opportunities related to quantitative research, data science, machine learning, actuarial modeling, and financial modeling.\nYou can reach me through:\n\nEmail: jsjaramillodd@gmail.com\nGitHub: github.com/jsjaramillod\nLinkedIn: TU_LINKEDIN_AQUI"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a Ph.D. candidate in Mathematics at the University of Oregon. My research lies at the intersection of probability, Markov chain Monte Carlo methods, and the mathematical analysis of sampling algorithms.\nAlongside my doctoral research, I have developed a strong applied interest in time series, econometrics, causal inference, machine learning, and quantitative finance. I am currently building a technical portfolio that translates my mathematical training into applied projects relevant for industry roles.\nMy long-term goal is to work on quantitative problems where rigorous mathematical thinking, statistical modeling, and computational implementation meet."
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "About",
+    "section": "Interests",
+    "text": "Interests\n\nProbability and stochastic processes\n\nMarkov chain Monte Carlo\n\nHamiltonian Monte Carlo\n\nTime series and forecasting\n\nEconometrics and causal inference\n\nQuantitative finance\n\nMachine learning and data science\n\nActuarial and risk modeling"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "You can download my current CV here:\nDownload CV"
+  },
+  {
+    "objectID": "cv.html#summary",
+    "href": "cv.html#summary",
+    "title": "CV",
+    "section": "Summary",
+    "text": "Summary\nPh.D. candidate in Mathematics with research experience in probability, Markov chain Monte Carlo, Hamiltonian Monte Carlo, and stochastic modeling. Additional training in econometrics, time series, causal inference, machine learning, and quantitative finance."
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "CV",
+    "section": "Education",
+    "text": "Education\nPh.D. in Mathematics\nUniversity of Oregon\nExpected completion: 2026\nM.Sc. in Economics\nUniversity of Oregon"
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "CV",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nPython, R, SQL\n\nProbability and stochastic processes\n\nTime series and forecasting\n\nEconometrics and causal inference\n\nMachine learning\n\nBayesian modeling\n\nMonte Carlo methods\n\nNumerical optimization\n\nLaTeX, Git, GitHub"
+  }
+]

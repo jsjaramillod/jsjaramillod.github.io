@@ -1,0 +1,48 @@
+/* General layout */
+
+body {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.navbar-title {
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Cards / sections */
+
+.grid {
+  margin-top: 2rem;
+}
+
+.g-col-12 {
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  background-color: #fafafa;
+}
+
+/* Homepage */
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Make content less cramped */
+
+main {
+  max-width: 1100px;
+}

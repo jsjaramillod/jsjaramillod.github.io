@@ -1,0 +1,20 @@
+---
+title: "About"
+---
+
+I am a Ph.D. candidate in Mathematics at the University of Oregon. My research lies at the intersection of probability, Markov chain Monte Carlo methods, and the mathematical analysis of sampling algorithms.
+
+Alongside my doctoral research, I have developed a strong applied interest in time series, econometrics, causal inference, machine learning, and quantitative finance. I am currently building a technical portfolio that translates my mathematical training into applied projects relevant for industry roles.
+
+My long-term goal is to work on quantitative problems where rigorous mathematical thinking, statistical modeling, and computational implementation meet.
+
+## Interests
+
+- Probability and stochastic processes  
+- Markov chain Monte Carlo  
+- Hamiltonian Monte Carlo  
+- Time series and forecasting  
+- Econometrics and causal inference  
+- Quantitative finance  
+- Machine learning and data science  
+- Actuarial and risk modeling  

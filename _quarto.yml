@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Sebastian Jaramillo"
+  navbar:
+    right:
+      - text: "About"
+        href: about.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Writing"
+        href: writing.qmd
+      - text: "Contact"
+        href: contact.qmd
+      - icon: github
+        href: https://github.com/jsjaramillod
+      - icon: linkedin
+        href: "TU_LINKEDIN_AQUI"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    page-layout: full

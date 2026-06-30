@@ -1,0 +1,26 @@
+---
+title: "Research"
+---
+
+My doctoral research focuses on probability and the mathematical analysis of Markov chain Monte Carlo algorithms.
+
+## Hamiltonian Monte Carlo and Sampling Algorithms
+
+My current research studies Hamiltonian Monte Carlo-type algorithms, coupling methods, and convergence behavior for probability distributions with geometric structure.
+
+I am particularly interested in how algorithmic design choices affect mixing, stability, contraction, and convergence rates.
+
+## Selected Research Themes
+
+- Hamiltonian Monte Carlo  
+- Coupling and path coupling  
+- Mixing times  
+- Wasserstein contraction  
+- Sampling on manifolds  
+- Strongly log-concave targets  
+- Non-standard kinetic energies  
+- Quantitative convergence bounds  
+
+## Research-to-Industry Connection
+
+Although my research is theoretical, the ideas connect naturally to computational statistics, Bayesian inference, simulation, uncertainty quantification, and scalable probabilistic modeling.

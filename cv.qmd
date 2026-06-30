@@ -1,0 +1,32 @@
+---
+title: "CV"
+---
+
+You can download my current CV here:
+
+[Download CV](assets/cv/Sebastian_Jaramillo_CV.pdf)
+
+## Summary
+
+Ph.D. candidate in Mathematics with research experience in probability, Markov chain Monte Carlo, Hamiltonian Monte Carlo, and stochastic modeling. Additional training in econometrics, time series, causal inference, machine learning, and quantitative finance.
+
+## Education
+
+**Ph.D. in Mathematics**  
+University of Oregon  
+Expected completion: 2026
+
+**M.Sc. in Economics**  
+University of Oregon
+
+## Technical Skills
+
+- Python, R, SQL  
+- Probability and stochastic processes  
+- Time series and forecasting  
+- Econometrics and causal inference  
+- Machine learning  
+- Bayesian modeling  
+- Monte Carlo methods  
+- Numerical optimization  
+- LaTeX, Git, GitHub  

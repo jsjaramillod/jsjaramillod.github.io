@@ -1,0 +1,64 @@
+---
+title: "Projects"
+---
+
+This portfolio connects my mathematical training with applied work in time series, econometrics, causal inference, machine learning, and quantitative finance.
+
+Each project includes code, documentation, and a short explanation of the modeling problem, methodology, and results.
+
+## Featured Portfolio
+
+### Time Series Portfolio
+
+A unified collection of applied time series projects covering Bayesian modeling, forecasting, dynamic regression, vector autoregressions, and macroeconomic applications.
+
+**Repository:** [Time-Series](https://github.com/jsjaramillod/Time-Series)
+
+Planned modules:
+
+- Project 01: Bayesian Modeling for Binary Time Series  
+- Project 02: Forecasting and Dynamic Time Series Models  
+- Project 03: Vector Autoregressions and Impulse Responses  
+- Project 04: Bayesian VARs and Macroeconomic Applications  
+
+---
+
+### Econometrics and Causal Inference
+
+Applied projects involving regression, instrumental variables, regression discontinuity, matching, bootstrap inference, and causal interpretation.
+
+Topics include:
+
+- Fuzzy regression discontinuity  
+- Treatment effect estimation  
+- Bootstrap uncertainty  
+- Propensity score methods  
+- Bayesian causal forests  
+
+---
+
+### Quantitative Finance
+
+Projects connecting stochastic modeling, time series, and financial applications.
+
+Topics include:
+
+- Portfolio construction  
+- Hedging strategies  
+- Volatility modeling  
+- Risk analysis  
+- Forecasting financial time series  
+
+---
+
+### Machine Learning
+
+Machine learning and deep learning projects with emphasis on mathematical modeling, uncertainty, and applied prediction.
+
+Topics include:
+
+- Predictive modeling  
+- Model evaluation  
+- Computer vision  
+- Deep learning  
+- Uncertainty quantification  

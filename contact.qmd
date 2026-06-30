@@ -1,0 +1,11 @@
+---
+title: "Contact"
+---
+
+I am currently interested in opportunities related to quantitative research, data science, machine learning, actuarial modeling, and financial modeling.
+
+You can reach me through:
+
+- Email: jsjaramillodd@gmail.com
+- GitHub: [github.com/jsjaramillod](https://github.com/jsjaramillod)
+- LinkedIn: TU_LINKEDIN_AQUI
