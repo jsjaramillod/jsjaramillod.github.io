@@ -3,38 +3,20 @@ title: "Sebastian Jaramillo"
 subtitle: "Ph.D. Candidate in Mathematics | Probability, MCMC, Time Series, and Quantitative Modeling"
 ---
 
-Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with research interests in probability, Markov chain Monte Carlo methods, Hamiltonian Monte Carlo, and quantitative modeling.
-
-My current work focuses on the mathematical analysis of sampling algorithms, with broader interests in time series, econometrics, causal inference, machine learning, and quantitative finance.
-
-This website connects my academic research with a growing technical portfolio designed for industry-facing roles in data science, quantitative research, actuarial modeling, and machine learning.
-
-## Featured Areas
-
 ::: {.grid}
 
-::: {.g-col-12 .g-col-md-4}
-### Research
+::: {.g-col-12 .g-col-md-8}
 
-Mathematical research in probability, MCMC, Hamiltonian Monte Carlo, coupling methods, and convergence analysis.
+Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with research interests in probability, Markov chain Monte Carlo methods, Hamiltonian Monte Carlo, and quantitative modeling.
 
-[View Research](research.qmd)
+My website connects my academic research with applied projects in time series, econometrics, machine learning, and quantitative finance.
+
 :::
 
 ::: {.g-col-12 .g-col-md-4}
-### Projects
 
-Applied projects in time series, econometrics, causal inference, machine learning, and quantitative finance.
+![Sebastian Jaramillo](assets/img/profile.jpg){width="100%"}
 
-[View Projects](projects.qmd)
-:::
-
-::: {.g-col-12 .g-col-md-4}
-### CV
-
-Academic and industry-oriented experience, including research, teaching, technical projects, and quantitative training.
-
-[View CV](cv.qmd)
 :::
 
 :::

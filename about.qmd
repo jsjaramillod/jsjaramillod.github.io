@@ -2,6 +2,9 @@
 title: "About"
 ---
 
+![Sebastian Jaramillo](assets/img/profile.jpg){width=250}
+
+
 I am a Ph.D. candidate in Mathematics at the University of Oregon. My research lies at the intersection of probability, Markov chain Monte Carlo methods, and the mathematical analysis of sampling algorithms.
 
 Alongside my doctoral research, I have developed a strong applied interest in time series, econometrics, causal inference, machine learning, and quantitative finance. I am currently building a technical portfolio that translates my mathematical training into applied projects relevant for industry roles.
