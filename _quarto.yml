@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - assets/cv/Sebastian_Jaramillo_CV.pdf
 
 website:
   title: "Sebastian Jaramillo"
@@ -21,7 +23,9 @@ website:
       - icon: github
         href: https://github.com/jsjaramillod
       - icon: linkedin
-        href: "TU_LINKEDIN_AQUI"
+        href: www.linkedin.com/in/jjaramillod
+
+
 
 format:
   html:
