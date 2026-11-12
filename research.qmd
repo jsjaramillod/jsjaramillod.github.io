@@ -10,6 +10,8 @@ My current research studies Hamiltonian Monte Carlo-type algorithms, coupling me
 
 I am particularly interested in how algorithmic design choices affect mixing, stability, contraction, and convergence rates.
 
+[When correlated draws help](hmc-circle.html). Can correlated samples give a more precise estimate? Use a circle to see how the answer changes with the quantity being averaged, then reproduce a simulation of the exact sampler in my dissertation.
+
 ## Selected Research Themes
 
 - Hamiltonian Monte Carlo  

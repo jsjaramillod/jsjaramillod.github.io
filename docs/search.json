@@ -67,7 +67,7 @@
     "href": "research.html#hamiltonian-monte-carlo-and-sampling-algorithms",
     "title": "Research",
     "section": "Hamiltonian Monte Carlo and Sampling Algorithms",
-    "text": "Hamiltonian Monte Carlo and Sampling Algorithms\nMy current research studies Hamiltonian Monte Carlo-type algorithms, coupling methods, and convergence behavior for probability distributions with geometric structure.\nI am particularly interested in how algorithmic design choices affect mixing, stability, contraction, and convergence rates."
+    "text": "Hamiltonian Monte Carlo and Sampling Algorithms\nMy current research studies Hamiltonian Monte Carlo-type algorithms, coupling methods, and convergence behavior for probability distributions with geometric structure.\nI am particularly interested in how algorithmic design choices affect mixing, stability, contraction, and convergence rates.\nWhen correlated draws help. Can correlated samples give a more precise estimate? Use a circle to see how the answer changes with the quantity being averaged, then reproduce a simulation of the exact sampler in my dissertation."
   },
   {
     "objectID": "research.html#selected-research-themes",

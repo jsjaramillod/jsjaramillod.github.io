@@ -3,6 +3,9 @@ project:
   output-dir: docs
   resources:
     - assets/cv/Sebastian_Jaramillo_CV.pdf
+    - hmc-circle.html
+    - assets/hmc/reproduce_hmc_pairs.py
+    - assets/hmc/hmc-link-preview.png
 
 website:
   title: "Sebastian Jaramillo"
@@ -23,7 +26,7 @@ website:
       - icon: github
         href: https://github.com/jsjaramillod
       - icon: linkedin
-        href: www.linkedin.com/in/jjaramillod
+        href: https://www.linkedin.com/in/jjaramillod/
 
 
 

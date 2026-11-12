@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f2e9">
+<meta name="description" content="An interactive research note by Sebastian Jaramillo Díaz on exact Hamiltonian Monte Carlo, antithetic sampling and the variance of a two-draw average.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When correlated draws help">
+<meta property="og:description" content="An interactive circle experiment and a reproducible simulation of exact Hamiltonian Monte Carlo with Laplace momentum.">
+<meta property="og:url" content="https://jsjaramillod.github.io/hmc-circle.html">
+<meta property="og:image" content="https://jsjaramillod.github.io/assets/hmc/hmc-link-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="An illustrated preview of the HMC circle research note">
+<meta name="twitter:card" content="summary_large_image">
+<title>When correlated draws help · Sebastian Jaramillo Díaz</title>
+<style>
+:root{color-scheme:light;--paper:#f6f2e9;--panel:#fffcf6;--ink:#162e36;--muted:#4d6163;--line:#cbcfc4;--teal:#006e66;--coral:#a6452b;--navy:#142e37;--amber:#ffc67e;--sans:"Inter","Helvetica Neue",Arial,sans-serif;--serif:"STIX Two Text","Baskerville",Georgia,serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.56}
+a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:.19em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid #c15719;outline-offset:4px}
+.page{width:min(1064px,calc(100% - 64px));margin:auto}
+header{border-bottom:1px solid var(--line)}
+.mast{min-height:69px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.mast a{color:var(--ink);font-size:.95rem;font-weight:650;text-decoration:none}
+.mast a:hover{text-decoration:underline}
+.mast span{font-size:.8rem;color:var(--muted)}
+.intro{padding:clamp(34px,5vw,66px) 0 30px}
+.subject{margin:0 0 13px;color:var(--teal);font:650 .77rem/1.35 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400}
+h1{font-size:clamp(2.85rem,6.7vw,5.2rem);line-height:1;letter-spacing:-.055em;margin:0 0 17px}
+.lead{font-size:clamp(1rem,1.9vw,1.22rem);max-width:750px;line-height:1.53;color:var(--muted);margin:0}
+.jump{display:inline-block;margin-top:13px;font-size:.87rem;font-weight:650}
+.experiment{border-block:1px solid var(--line);padding:27px 0 29px;margin-top:34px}
+.experiment h2{font-size:clamp(1.7rem,3vw,2.45rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:11px}
+.experiment-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:start;gap:clamp(24px,5vw,70px)}
+.experiment p{color:var(--muted);font-size:.96rem;margin-bottom:9px}
+.experiment p:last-child{margin:0}
+.experiment table{width:100%;border-collapse:collapse;line-height:1.35;font-variant-numeric:tabular-nums}
+.experiment th,.experiment td{text-align:left;padding:9px 2px;border-bottom:1px solid var(--line)}
+.experiment thead th{font-size:.8rem;color:var(--muted);font-weight:600}
+.experiment th[scope=row]{font:normal 1.12rem var(--serif)}
+.experiment td{font:600 .9rem var(--mono)}
+.experiment .method{font-size:.83rem;margin-top:10px}
+.experiment .download{display:inline-block;margin-top:5px;font-size:.86rem;font-weight:650}
+.lab{display:grid;grid-template-columns:1fr 1.04fr;border:1px solid #b9c4b9;border-radius:16px;overflow:hidden;background:var(--panel)}
+.move{background:var(--navy);color:#fffcf2;padding:24px 30px 22px}
+.result{padding:24px 30px 22px}
+.lab h2{font-size:clamp(1.5rem,2.8vw,2rem);letter-spacing:-.025em;line-height:1.1;margin-bottom:7px}
+.lab p.explain{font-size:.9rem;line-height:1.46;margin:0;max-width:46ch}
+.move .explain{color:#d0dcd7}
+.result .explain{color:var(--muted)}
+.ring{display:block;width:100%;height:clamp(180px,21vw,225px);margin:5px 0 2px;overflow:visible}
+.ring text{fill:#d2ded9;font:13px var(--sans);text-anchor:middle;dominant-baseline:middle}
+.ring .axis{stroke:#638087;stroke-width:.8;stroke-dasharray:3 4}
+.ring .track{stroke:#87a0a0;stroke-width:1.7;fill:none}
+.ring .arc{stroke:var(--amber);stroke-width:4.5;fill:none;stroke-linecap:round}
+.ring .radius{stroke:#d2ded9;stroke-dasharray:4 5;stroke-width:1;fill:none;opacity:.8}
+.ring .start-dot{stroke:#fff9ec;stroke-width:2.5;fill:var(--navy)}
+.ring .end-dot{stroke:var(--navy);stroke-width:1.5;fill:var(--amber)}
+.move-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.move-key{display:flex;gap:15px;font-size:.83rem;color:#e6eee6}
+.move-key span{white-space:nowrap}
+.start-mark,.end-mark{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:0}
+.start-mark{border:2px solid #fff9ec;border-radius:100%}
+.end-mark{width:8px;height:8px;background:var(--amber);transform:rotate(45deg)}
+#pair-direction{font-size:.72rem;color:#c2d3cd}
+.result-row{padding:18px 0 12px;border-top:1px solid var(--line)}
+.result-row:first-of-type{margin-top:15px}
+.metric{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.metric h3{font-size:clamp(1.15rem,2vw,1.43rem);line-height:1.1;margin:0}
+.math{font-family:var(--serif);white-space:nowrap}
+.metric output{font:500 clamp(1.7rem,3vw,2.35rem)/1 var(--serif);letter-spacing:-.045em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.first{--tone:var(--teal)}
+.second{--tone:var(--coral)}
+.metric output{color:var(--tone)}
+.scale{position:relative;height:6px;margin:13px 0 5px;background:#dce1d6;border-radius:3px}
+.scale::after{content:"";position:absolute;left:50%;width:1px;top:-5px;height:16px;background:#34494c}
+.fill{height:100%;background:var(--tone);width:var(--fill);border-radius:3px}
+.axis-labels{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;font-size:.69rem;line-height:1.3;color:var(--muted)}
+.axis-labels span:last-child{text-align:right}
+.pair-value{font-size:.81rem;line-height:1.4;margin:9px 0 0;color:var(--muted);font-variant-numeric:tabular-nums}
+.controls{grid-column:1/-1;border-top:1px solid var(--line);padding:19px 30px;display:grid;grid-template-columns:minmax(260px,1fr) auto;align-items:center;gap:20px 54px;background:#f3f3e9}
+.range-line,.range-ends{display:flex;justify-content:space-between;gap:10px}
+.range-line{font-size:.93rem;align-items:baseline}
+.range-line label{font-weight:650}
+.range-line output{font:600 .92rem var(--mono);color:var(--teal)}
+input[type=range]{display:block;width:100%;height:22px;margin:4px 0 0;accent-color:var(--teal);cursor:pointer}
+.range-ends{font-size:.72rem;color:var(--muted)}
+button{min-height:44px;padding:10px 17px;border:1px solid #738480;border-radius:7px;background:var(--panel);color:var(--ink);font:600 .86rem var(--sans);cursor:pointer}
+button:hover{background:#e9eee2;border-color:var(--teal)}
+.nojs{margin:16px 0 0;color:var(--muted)}
+.notes{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,6vw,80px);margin:42px 0}
+.notes h2{font-size:clamp(1.6rem,2.7vw,2.1rem);line-height:1.1;letter-spacing:-.025em;margin-bottom:12px}
+.notes p{color:var(--muted);margin-bottom:13px;font-size:.98rem}
+.notes p:last-child{margin-bottom:0}
+details{border-block:1px solid var(--line);padding:10px 0;margin-top:19px}
+summary{cursor:pointer;color:var(--teal);font-weight:600;font-size:.93rem}
+.proof{padding:14px 0 6px}
+.equation{padding:8px 12px;margin:8px 0 12px;border-left:3px solid var(--teal);font:normal 1.12rem/1.45 var(--serif);overflow-wrap:break-word}
+.notes .byline{color:var(--ink);font-size:.86rem;font-weight:600;margin-bottom:7px}
+footer{border-top:1px solid var(--line);padding:16px 0 30px;color:var(--muted);font-size:.85rem}
+footer a{font-weight:600}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:740px){
+ .experiment-grid{grid-template-columns:1fr;gap:12px}.page{width:calc(100% - 36px)}.mast{min-height:56px}.intro{padding:34px 0 23px}
+ .lab{grid-template-columns:1fr}.move{grid-row:1;padding:19px 21px 16px}.result{grid-row:3;padding:20px 21px 13px}
+ .controls{grid-row:2;grid-template-columns:1fr auto;gap:14px;padding:14px 18px}.ring{height:188px}.notes{grid-template-columns:1fr;gap:27px;margin:30px 0}
+ .result-row{padding:14px 0 12px}
+}
+@media(max-width:460px){.controls{grid-template-columns:1fr;gap:11px}.controls button{justify-self:start}.mast span{font-size:.72rem}.mast a{font-size:.85rem}}
+@media print{body{background:white}.page{width:100%;max-width:none}.lab{break-inside:avoid}.controls,footer,.mast a::before{display:none}.move,.scale,.fill{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header><div class="page mast"><a href="https://jsjaramillod.github.io/">Sebastian Jaramillo Díaz</a><span>Research notes</span></div></header>
+<main class="page">
+ <section class="intro" aria-labelledby="note-title">
+  <p class="subject">Hamiltonian Monte Carlo</p>
+  <h1 id="note-title">When correlated draws help</h1>
+  <p class="lead">Can two dependent samples give a more precise average than two independent ones? On a circle, the answer changes with what you measure. Try the same move on two different signals.</p>
+  <a class="jump" href="#von-mises">Jump to the von Mises simulation ↓</a>
+ </section>
+ <section class="lab" aria-label="Interactive circle experiment">
+  <div class="move">
+   <h2>One move on a uniform circle</h2>
+   <p class="explain">Start at one angle and rotate by the selected flight angle. Either direction is equally likely.</p>
+   <svg class="ring" viewBox="0 0 360 220" role="img" aria-labelledby="ring-title ring-description">
+    <title id="ring-title">One illustrated flight</title>
+    <desc id="ring-description">An example move from 15 degrees to 165 degrees counterclockwise.</desc>
+    <path class="axis" d="M60 110H300 M180 12V208"/>
+    <circle class="track" cx="180" cy="110" r="81"/>
+    <text x="291" y="110">0°</text><text x="180" y="12">90°</text><text x="68" y="110">180°</text><text x="180" y="209">270°</text>
+    <path id="radii" class="radius" d="M258.24 89.04L180 110L101.76 89.04"/>
+    <path id="flight-arc" class="arc" d="M258.24 89.04 A81 81 0 0 0 101.76 89.04"/>
+    <circle id="start-dot" class="start-dot" cx="258.24" cy="89.04" r="6.4"/>
+    <path id="end-dot" class="end-dot" d="M0 -7L7 0L0 7L-7 0Z" transform="translate(101.76 89.04)"/>
+   </svg>
+   <div class="move-meta"><div class="move-key"><span><i class="start-mark" aria-hidden="true"></i> Start <b id="start-angle">15°</b></span><span><i class="end-mark" aria-hidden="true"></i> End <b id="end-angle">165°</b></span></div><span id="pair-direction">Counterclockwise</span></div>
+  </div>
+  <div class="result">
+   <h2>Variance of the pair average</h2>
+   <p class="explain">Across uniform starting angles and both directions. A ratio below 1 means less variance than averaging two independent draws.</p>
+   <div class="result-row first">
+    <div class="metric"><h3>First harmonic · <span class="math">cos θ</span></h3><output id="ratio-1" aria-label="First harmonic variance ratio">0.13×</output></div>
+    <div class="scale" aria-hidden="true"><div id="fill-1" class="fill" style="--fill:6.7%"></div></div>
+    <div class="axis-labels" aria-hidden="true"><span>0</span><span>1 · independent</span><span>2</span></div>
+    <p class="pair-value">Illustrated values <span id="values-1">+0.97 → −0.97</span></p>
+   </div>
+   <div class="result-row second">
+    <div class="metric"><h3>Second harmonic · <span class="math">cos(2θ)</span></h3><output id="ratio-2" aria-label="Second harmonic variance ratio">1.50×</output></div>
+    <div class="scale" aria-hidden="true"><div id="fill-2" class="fill" style="--fill:75%"></div></div>
+    <div class="axis-labels" aria-hidden="true"><span>0</span><span>1 · independent</span><span>2</span></div>
+    <p class="pair-value">Illustrated values <span id="values-2">+0.87 → +0.87</span></p>
+   </div>
+  </div>
+  <div class="controls">
+   <div>
+    <div class="range-line"><label for="flight">Flight angle</label><output id="flight-value" for="flight">150°</output></div>
+    <input id="flight" type="range" min="0" max="180" step="1" value="150" aria-describedby="flight-units">
+    <div class="range-ends" aria-hidden="true"><span>0°</span><span>180°</span></div><span class="sr-only" id="flight-units">Flight angle in degrees. The circle and both variance ratios update with the slider.</span>
+   </div>
+   <button id="new-pair" type="button">Draw a new pair</button>
+  </div>
+ </section>
+ <noscript><p class="nojs">The diagram shows a 150° flight. Enable JavaScript to change the angle or draw another starting point.</p></noscript>
+ <p id="pair-announcement" class="sr-only" aria-live="polite"></p>
+ <section class="experiment" id="von-mises" aria-labelledby="vm-title">
+  <p class="subject" style="color:var(--teal)">The research model</p>
+  <h2 id="vm-title">When some directions are more likely</h2>
+  <div class="experiment-grid">
+   <div>
+    <p>I ran the same two-draw comparison for a von Mises target centered at zero. Here the distribution has a preferred direction. The sine records which side of that direction a point falls on. The cosine measures its alignment and takes the same value on either side at equal angular distance.</p>
+    <p>On the very same pairs of angles, the sine average had about <strong>36% less variance</strong> than an independent pair. The cosine average had about <strong>7% more</strong>.</p>
+   </div>
+   <div>
+    <table aria-label="Monte Carlo estimates for the variance of a two-draw average divided by its independent-draw variance">
+     <thead><tr><th scope="col">Signal</th><th scope="col">Variance ratio</th><th scope="col">MC standard error</th></tr></thead>
+     <tbody><tr><th scope="row">sin θ</th><td>0.6418</td><td>0.00084</td></tr><tr><th scope="row">cos θ</th><td>1.0662</td><td>0.00173</td></tr></tbody>
+    </table>
+    <p class="method">1.2 million independent replicates. Each starts at stationarity and takes one exact HMC step. Concentration κ = 4, normalized flight length ℓ = 1.4, Laplace scale <i>b</i> = 1. The standard errors quantify Monte Carlo uncertainty.</p>
+    <a class="download" id="source-download" download="reproduce_hmc_pairs.py" href="assets/hmc/reproduce_hmc_pairs.py">Download the simulation (Python)</a>
+   </div>
+  </div>
+ </section>
+ <div class="notes">
+  <section aria-labelledby="read-title">
+   <h2 id="read-title">Reading the two signals</h2>
+   <p>The first signal is the point’s horizontal coordinate. The second doubles the angle before taking that coordinate. In the opening example, the points at 15° and 165° have opposite horizontal coordinates. Double the angles to 30° and 330°, and the horizontal coordinates agree.</p>
+   <p>Draw a new pair. The readings change, while the bars summarize every possible starting angle at that flight length. Try a half-turn (180°) to see exact cancellation for the first signal.</p>
+   <details><summary>Derive the variance ratio</summary><div class="proof">
+    <p>For the uniform target, the potential is constant. With kinetic energy <span class="math">K(p) = |p|</span>, the momentum stays fixed throughout each flight. A fresh symmetric Laplace momentum sets the direction, and the angular speed is one. Write δ for the flight angle in radians.</p>
+    <p>Start with θ uniform on the circle. Choose a sign independently with equal probability and set θ′ = θ ± δ, modulo 2π. Both endpoints are uniform. For any positive integer <i>k</i>, <span class="math">f(θ) = cos(kθ)</span> has mean zero and variance 1/2. Averaging over the two directions gives</p>
+    <div class="equation">E[f(θ′) | θ] = cos(kδ) f(θ).</div>
+    <p>Consequently the correlation of successive readings is cos(kδ). Dividing the variance of their average by the variance of the average of two independent readings gives</p>
+    <div class="equation">variance ratio = 1 + cos(kδ).</div>
+    <p>At δ = 150° = 5π/6, the ratios are 1 − √3/2 and 3/2 for the first and second harmonics. These are exact two-draw calculations. An estimate formed from a long chain also depends on correlations at longer lags.</p>
+   </div></details>
+  </section>
+  <section aria-labelledby="research-title">
+   <h2 id="research-title">From this circle to my research</h2>
+   <p>In my dissertation, I study <a href="https://arxiv.org/abs/2312.16546">Ari Pakman’s exact HMC sampler</a> with Laplace momentum on the circle. Between turns the angle travels at constant speed. A sufficiently energetic trajectory can go all the way around the circle, while one with less energy can reach a turning point and reverse.</p>
+   <p>That geometry leads to the question behind this illustration. For a particular quantity I want to estimate, when do successive readings offset each other enough to reduce the long-run variance of their average?</p>
+  </section>
+ </div>
+</main>
+<footer><div class="page"><a href="https://jsjaramillod.github.io/">Return to Sebastian’s website</a></div></footer>
+<script type="text/plain" id="embedded-source">"""Estimate stationary two-draw variance ratios for exact HMC on the circle.
+
+Run with Python 3 and NumPy: python reproduce_hmc_pairs.py
+Each independent replicate draws a von Mises position and a Laplace momentum,
+then advances the exact Hamiltonian dynamics by the specified travel length.
+"""
+import numpy as np
+
+
+KAPPA = 4.0
+LENGTH = 1.4
+SEED = 20261112
+BATCH_COUNT = 120
+BATCH_SIZE = 10000
+
+
+def wrap(theta):
+    return (theta + np.pi) % (2 * np.pi) - np.pi
+
+
+def hmc_step(theta, momentum, kappa, length):
+    """Unit-scale Laplace kinetic energy |p|, potential -kappa*cos(theta)."""
+    energy = -kappa * np.cos(theta) + np.abs(momentum)
+    unfolded = theta + np.sign(momentum) * length
+    endpoint = wrap(unfolded)
+    trapped = energy < kappa
+    # Motions below the barrier reflect at the turning points -A and A.
+    angle = np.arccos(np.clip(-energy[trapped] / kappa, -1.0, 1.0))
+    if np.any(angle == 0):
+        raise ValueError("Zero-energy-width orbit; this has probability zero.")
+    phase = (unfolded[trapped] + angle) % (4 * angle)
+    endpoint[trapped] = angle - np.abs(phase - 2 * angle)
+    return endpoint
+
+
+def estimate_ratio(values0, values1):
+    """Var[(f0+f1)/2] divided by Var_pi[f]/2, pooling both marginals."""
+    mean = 0.5 * (np.mean(values0) + np.mean(values1))
+    left = values0 - mean
+    right = values1 - mean
+    stationary_variance = 0.5 * (np.mean(left**2) + np.mean(right**2))
+    pair_variance = np.mean(((left + right) / 2)**2)
+    return pair_variance / (stationary_variance / 2)
+
+
+def reference_moments(observable):
+    """Periodic quadrature of the stationary von Mises mean and variance."""
+    grid = np.linspace(-np.pi, np.pi, 16384, endpoint=False)
+    weights = np.exp(KAPPA * np.cos(grid))
+    values = observable(grid)
+    mean = np.average(values, weights=weights)
+    return mean, np.average((values - mean)**2, weights=weights)
+
+
+def main():
+    rng = np.random.default_rng(SEED)
+    count = BATCH_SIZE * BATCH_COUNT
+    theta = rng.vonmises(0, KAPPA, count)
+    momentum = rng.laplace(size=count)
+    endpoint = hmc_step(theta, momentum, KAPPA, LENGTH)
+    identity = hmc_step(theta, momentum, KAPPA, 0)
+    assert np.max(np.abs(wrap(identity - theta))) < 1e-12
+    print(f"{count:,} independent pairs; seed {SEED}; kappa={KAPPA}; length={LENGTH}")
+    for observable in (np.sin, np.cos):
+        left = observable(theta)
+        right = observable(endpoint)
+        ratio = estimate_ratio(left, right)
+        batch_ratios = [
+            estimate_ratio(x, y)
+            for x, y in zip(left.reshape(BATCH_COUNT, -1), right.reshape(BATCH_COUNT, -1))
+        ]
+        mcse = np.std(batch_ratios, ddof=1) / np.sqrt(BATCH_COUNT)
+        target_mean, target_var = reference_moments(observable)
+        print(f"{observable.__name__}: ratio={ratio:.6f}, MCSE={mcse:.6f}, "
+              f"approx. 95% MC interval=[{ratio - 1.96 * mcse:.6f}, {ratio + 1.96 * mcse:.6f}]")
+        print(f"  means (initial, endpoint, target): "
+              f"{left.mean():.6f}, {right.mean():.6f}, {target_mean:.6f}")
+        print(f"  variances (initial, endpoint, target): "
+              f"{left.var():.6f}, {right.var():.6f}, {target_var:.6f}")
+
+
+if __name__ == "__main__":
+    main()
+</script>
+<script>
+"use strict";
+if (location.protocol === "file:") {
+  const code = document.getElementById("embedded-source").textContent;
+  const source = new Blob([code], {type: "text/x-python;charset=utf-8"});
+  document.getElementById("source-download").href = URL.createObjectURL(source);
+}
+const flight = document.getElementById("flight");
+const radius = 81;
+let startDegrees = 15;
+let direction = 1;
+function radians(degrees) { return degrees * Math.PI / 180; }
+function wrap(degrees) { return ((degrees % 360) + 360) % 360; }
+function point(degrees) {
+  const theta = radians(degrees);
+  return { x: 180 + radius * Math.cos(theta), y: 110 - radius * Math.sin(theta) };
+}
+function signed(value) {
+  if (Math.abs(value) < 0.005) return "0.00";
+  return (value < 0 ? "−" : "+") + Math.abs(value).toFixed(2);
+}
+function formatAngle(degrees) {
+  return (Math.round(wrap(degrees) * 10) / 10 % 360) + "°";
+}
+function setText(id, value) { document.getElementById(id).textContent = value; }
+function redraw() {
+  const delta = Number(flight.value);
+  const endDegrees = wrap(startDegrees + direction * delta);
+  const start = point(startDegrees);
+  const end = point(endDegrees);
+  const arc = document.getElementById("flight-arc");
+  const startDot = document.getElementById("start-dot");
+  const directionText = direction === 1 ? "Counterclockwise" : "Clockwise";
+  arc.setAttribute("d", delta === 0 ? "" : "M" + start.x + " " + start.y + " A81 81 0 0 " + (direction === 1 ? 0 : 1) + " " + end.x + " " + end.y);
+  document.getElementById("radii").setAttribute("d", "M" + start.x + " " + start.y + " L180 110 L" + end.x + " " + end.y);
+  startDot.setAttribute("cx", start.x);
+  startDot.setAttribute("cy", start.y);
+  document.getElementById("end-dot").setAttribute("transform", "translate(" + end.x + " " + end.y + ")");
+  setText("flight-value", delta + "°");
+  flight.setAttribute("aria-valuetext", delta + " degrees");
+  setText("start-angle", formatAngle(startDegrees));
+  setText("end-angle", formatAngle(endDegrees));
+  setText("pair-direction", delta === 0 ? "No displacement" : directionText);
+  setText("ring-description", "Start " + formatAngle(startDegrees) + ", end " + formatAngle(endDegrees) + ". Flight angle " + delta + " degrees" + (delta ? ", " + directionText.toLowerCase() : "") + ".");
+  for (const k of [1, 2]) {
+    const ratio = 1 + Math.cos(k * radians(delta));
+    const startValue = Math.cos(k * radians(startDegrees));
+    const endValue = Math.cos(k * radians(endDegrees));
+    setText("ratio-" + k, ratio.toFixed(2) + "×");
+    document.getElementById("fill-" + k).style.setProperty("--fill", ratio * 50 + "%");
+    setText("values-" + k, signed(startValue) + " → " + signed(endValue));
+  }
+}
+flight.addEventListener("input", redraw);
+document.getElementById("new-pair").addEventListener("click", () => {
+  startDegrees = Math.random() * 360;
+  direction = Math.random() < 0.5 ? -1 : 1;
+  redraw();
+  setText("pair-announcement", document.getElementById("ring-description").textContent);
+});
+redraw();
+</script>
+</body>
+</html>
