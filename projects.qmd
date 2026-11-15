@@ -4,22 +4,49 @@ title: "Projects"
 
 This portfolio connects my mathematical training with applied work in time series, econometrics, causal inference, machine learning, and quantitative finance.
 
-Each project includes code, documentation, and a short explanation of the modeling problem, methodology, and results.
+The time-series studies below distinguish implemented results from research designs. Links provide the underlying code, analysis, and stated limitations.
 
 ## Featured Portfolio
 
-### Time Series Portfolio
+### Time Series and Bayesian Econometrics
 
-A unified collection of applied time series projects covering Bayesian modeling, forecasting, dynamic regression, vector autoregressions, and macroeconomic applications.
+A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02 and 03 provide executable Python packages, scientific controls, notebooks, and research reports. Later projects remain research designs.
 
-**Repository:** [Time-Series](https://github.com/jsjaramillod/Time-Series)
+[Browse the repository](https://github.com/jsjaramillod/Time-Series) or examine the completed work below.
 
-Planned modules:
+#### Bayesian learning and posterior prediction {#bayesian-learning}
 
-- Project 01: Bayesian Modeling for Binary Time Series  
-- Project 02: Forecasting and Dynamic Time Series Models  
-- Project 03: Vector Autoregressions and Impulse Responses  
-- Project 04: Bayesian VARs and Macroeconomic Applications  
+**Project 01.** How do prior beliefs and observations change posterior predictions for discrete outcomes? The existing notebook develops binary and count models, prior sensitivity, and posterior prediction, including the supplied PGA scoring data. This is existing notebook-based work; it has not been converted into the package architecture used by the later studies.
+
+[Project overview](https://github.com/jsjaramillod/Time-Series/blob/main/project_01_bayesian_discrete_models) · [Analysis notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project1/project_01_bayesian_discrete_models.ipynb)
+
+#### Monetary policy and recession risk {#monetary-policy}
+
+**Project 02.** Do policy responses to economic slack require separate slopes, and what do financial indicators reveal about recession risk twelve months ahead?
+
+The policy analysis uses 239 U.S. quarters, 1955Q1–2014Q3. The symmetric rule receives **96.4% posterior model probability** within the two specified alternatives under the primary prior. The long-run inflation response has posterior median **1.60** and a central 90% interval of **[0.95, 2.48]**. Residual dependence limits the policy interpretation.
+
+The recession application makes forecast origins, target dates, and label availability explicit. In its twelve observed 2008 targets, Brier loss improves relative to a matched frequency benchmark while negative log score worsens. This revised-data, pseudo-real-time exercise does not establish general forecasting superiority.
+
+The Python implementation separates data contracts, priors, models, Gibbs samplers, posterior results, and forecast evaluation. Independent numerical integration checks model evidence; scientific controls run in continuous integration.
+
+[Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project2/docs/monetary_policy_recession_risk.pdf) · [Executive summary](https://github.com/jsjaramillod/Time-Series/blob/main/project2/EXECUTIVE_SUMMARY.md) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project2/notebooks/project02_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project2)
+
+#### Persistence and shock propagation {#shock-propagation}
+
+**Project 03.** How can models with the same long-run shock total produce different transmission paths, and how does persistence change the precision of an average?
+
+Three stable autoregressive specifications share an infinite accumulated response of ten to a one-unit innovation, but their responses differ in timing and variance. One stable AR(2) initially amplifies the innovation by **20%** before decaying. Root analysis separates stable, unstable, and unit-circle cases; a finite moving-average control distinguishes stationarity from invertibility.
+
+In the designed stationary AR(1), **200 observations have the mean-estimation precision of 11.05 independent observations**. Across 10,000 replications, a nominal 95% interval that assumes independence attains only **35.27% coverage**. These are controlled known-parameter simulation results, not estimates from an observed economic dataset or posterior credible intervals.
+
+Responses are checked through companion matrices, recursion, controlled shock paths, and an independent linear filter. The object-oriented package records seeds, initial conditions, burn-in, numerical errors, and artifact checksums.
+
+[Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project3/docs/persistence_shock_propagation.pdf) · [Executive summary](https://github.com/jsjaramillod/Time-Series/blob/main/project3/EXECUTIVE_SUMMARY.md) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project3/notebooks/project03_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project3)
+
+#### Research designs in progress
+
+The remaining designs address lag uncertainty and Bayesian model averaging (04), GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
 
 ---
 

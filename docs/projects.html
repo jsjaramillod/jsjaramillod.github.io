@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#featured-portfolio" id="toc-featured-portfolio" class="nav-link active" data-scroll-target="#featured-portfolio">Featured Portfolio</a>
   <ul class="collapse">
-  <li><a href="#time-series-portfolio" id="toc-time-series-portfolio" class="nav-link" data-scroll-target="#time-series-portfolio">Time Series Portfolio</a></li>
+  <li><a href="#time-series-and-bayesian-econometrics" id="toc-time-series-and-bayesian-econometrics" class="nav-link" data-scroll-target="#time-series-and-bayesian-econometrics">Time Series and Bayesian Econometrics</a></li>
   <li><a href="#econometrics-and-causal-inference" id="toc-econometrics-and-causal-inference" class="nav-link" data-scroll-target="#econometrics-and-causal-inference">Econometrics and Causal Inference</a></li>
   <li><a href="#quantitative-finance" id="toc-quantitative-finance" class="nav-link" data-scroll-target="#quantitative-finance">Quantitative Finance</a></li>
   <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine Learning</a></li>
@@ -175,24 +175,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This portfolio connects my mathematical training with applied work in time series, econometrics, causal inference, machine learning, and quantitative finance.</p>
-<p>Each project includes code, documentation, and a short explanation of the modeling problem, methodology, and results.</p>
+<p>The time-series studies below distinguish implemented results from research designs. Links provide the underlying code, analysis, and stated limitations.</p>
 <section id="featured-portfolio" class="level2">
 <h2 class="anchored" data-anchor-id="featured-portfolio">Featured Portfolio</h2>
-<section id="time-series-portfolio" class="level3">
-<h3 class="anchored" data-anchor-id="time-series-portfolio">Time Series Portfolio</h3>
-<p>A unified collection of applied time series projects covering Bayesian modeling, forecasting, dynamic regression, vector autoregressions, and macroeconomic applications.</p>
-<p><strong>Repository:</strong> <a href="https://github.com/jsjaramillod/Time-Series">Time-Series</a></p>
-<p>Planned modules:</p>
-<ul>
-<li>Project 01: Bayesian Modeling for Binary Time Series<br>
-</li>
-<li>Project 02: Forecasting and Dynamic Time Series Models<br>
-</li>
-<li>Project 03: Vector Autoregressions and Impulse Responses<br>
-</li>
-<li>Project 04: Bayesian VARs and Macroeconomic Applications</li>
-</ul>
+<section id="time-series-and-bayesian-econometrics" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-and-bayesian-econometrics">Time Series and Bayesian Econometrics</h3>
+<p>A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02 and 03 provide executable Python packages, scientific controls, notebooks, and research reports. Later projects remain research designs.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series">Browse the repository</a> or examine the completed work below.</p>
+<section id="bayesian-learning" class="level4">
+<h4 class="anchored" data-anchor-id="bayesian-learning">Bayesian learning and posterior prediction</h4>
+<p><strong>Project 01.</strong> How do prior beliefs and observations change posterior predictions for discrete outcomes? The existing notebook develops binary and count models, prior sensitivity, and posterior prediction, including the supplied PGA scoring data. This is existing notebook-based work; it has not been converted into the package architecture used by the later studies.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project_01_bayesian_discrete_models">Project overview</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project1/project_01_bayesian_discrete_models.ipynb">Analysis notebook</a></p>
+</section>
+<section id="monetary-policy" class="level4">
+<h4 class="anchored" data-anchor-id="monetary-policy">Monetary policy and recession risk</h4>
+<p><strong>Project 02.</strong> Do policy responses to economic slack require separate slopes, and what do financial indicators reveal about recession risk twelve months ahead?</p>
+<p>The policy analysis uses 239 U.S. quarters, 1955Q1–2014Q3. The symmetric rule receives <strong>96.4% posterior model probability</strong> within the two specified alternatives under the primary prior. The long-run inflation response has posterior median <strong>1.60</strong> and a central 90% interval of <strong>[0.95, 2.48]</strong>. Residual dependence limits the policy interpretation.</p>
+<p>The recession application makes forecast origins, target dates, and label availability explicit. In its twelve observed 2008 targets, Brier loss improves relative to a matched frequency benchmark while negative log score worsens. This revised-data, pseudo-real-time exercise does not establish general forecasting superiority.</p>
+<p>The Python implementation separates data contracts, priors, models, Gibbs samplers, posterior results, and forecast evaluation. Independent numerical integration checks model evidence; scientific controls run in continuous integration.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project2/docs/monetary_policy_recession_risk.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project2/EXECUTIVE_SUMMARY.md">Executive summary</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project2/notebooks/project02_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project2">Code and reproduction</a></p>
+</section>
+<section id="shock-propagation" class="level4">
+<h4 class="anchored" data-anchor-id="shock-propagation">Persistence and shock propagation</h4>
+<p><strong>Project 03.</strong> How can models with the same long-run shock total produce different transmission paths, and how does persistence change the precision of an average?</p>
+<p>Three stable autoregressive specifications share an infinite accumulated response of ten to a one-unit innovation, but their responses differ in timing and variance. One stable AR(2) initially amplifies the innovation by <strong>20%</strong> before decaying. Root analysis separates stable, unstable, and unit-circle cases; a finite moving-average control distinguishes stationarity from invertibility.</p>
+<p>In the designed stationary AR(1), <strong>200 observations have the mean-estimation precision of 11.05 independent observations</strong>. Across 10,000 replications, a nominal 95% interval that assumes independence attains only <strong>35.27% coverage</strong>. These are controlled known-parameter simulation results, not estimates from an observed economic dataset or posterior credible intervals.</p>
+<p>Responses are checked through companion matrices, recursion, controlled shock paths, and an independent linear filter. The object-oriented package records seeds, initial conditions, burn-in, numerical errors, and artifact checksums.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project3/docs/persistence_shock_propagation.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project3/EXECUTIVE_SUMMARY.md">Executive summary</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project3/notebooks/project03_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project3">Code and reproduction</a></p>
+</section>
+<section id="research-designs-in-progress" class="level4">
+<h4 class="anchored" data-anchor-id="research-designs-in-progress">Research designs in progress</h4>
+<p>The remaining designs address lag uncertainty and Bayesian model averaging (04), GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the <a href="https://github.com/jsjaramillod/Time-Series#projects-and-current-status">project catalog</a> for scope and status.</p>
 <hr>
+</section>
 </section>
 <section id="econometrics-and-causal-inference" class="level3">
 <h3 class="anchored" data-anchor-id="econometrics-and-causal-inference">Econometrics and Causal Inference</h3>

@@ -26,3 +26,9 @@ I am particularly interested in how algorithmic design choices affect mixing, st
 ## Research-to-Industry Connection
 
 Although my research is theoretical, the ideas connect naturally to computational statistics, Bayesian inference, simulation, uncertainty quantification, and scalable probabilistic modeling.
+
+## Applied econometrics and time-series dynamics
+
+The [time-series portfolio](projects.qmd) develops a practical connection between sampling theory and applied econometrics. Bayesian policy-rule comparison and recession probabilities use explicit priors, posterior simulation, and forecast information sets. Controlled autoregressive experiments examine stability, shock transmission, and the precision of time averages.
+
+Each analysis separates numerical verification from economic interpretation. The [policy study](projects.qmd#monetary-policy) documents residual and data-vintage limitations; the [dynamics study](projects.qmd#shock-propagation) identifies its findings as known-parameter simulation results.
