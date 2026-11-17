@@ -10,7 +10,7 @@ The time-series studies below distinguish implemented results from research desi
 
 ### Time Series and Bayesian Econometrics
 
-A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02 and 03 provide executable Python packages, scientific controls, notebooks, and research reports. Later projects remain research designs.
+A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02-04 provide executable Python packages, scientific controls, notebooks, and research reports. Projects 05-08 remain research designs.
 
 [Browse the repository](https://github.com/jsjaramillod/Time-Series) or examine the completed work below.
 
@@ -44,9 +44,21 @@ Responses are checked through companion matrices, recursion, controlled shock pa
 
 [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project3/docs/persistence_shock_propagation.pdf) · [Executive summary](https://github.com/jsjaramillod/Time-Series/blob/main/project3/EXECUTIVE_SUMMARY.md) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project3/notebooks/project03_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project3)
 
+#### Lag uncertainty and Bayesian model averaging {#lag-uncertainty}
+
+**Project 04.** How much does the lag-order decision affect what we learn about persistence and shock transmission?
+
+The study compares AR(1)-AR(8) on **192 identical targets** from a supplied 200-observation series. Under the primary prior, AR(2) receives **71.54% posterior model probability**, while other orders retain meaningful weight. The model-averaged coefficient-sum mean is **0.8478**, with a central 90% interval of **[0.7901, 0.9029]**; fixed AR(8) gives **0.8008**, with interval **[0.7276, 0.8739]**.
+
+Between-model uncertainty contributes **10.38%** of the primary coefficient-sum variance. Across coefficient-prior sensitivities, AR(2)'s weight ranges from **60.01% to 80.96%**, while model-averaged means remain between **0.8430 and 0.8504**. Finite shock responses preserve parameter and model uncertainty, with pointwise intervals and explicit root-stability checks.
+
+All 24 main fits have an independent retained-array replay in the recorded environment. Chib evidence is checked against numerical integration, including scalar tail calculations that distinguish zero sampled events from zero probability. The series' generating process and economic identity remain unverified; the findings are conditional inference rather than forecast-performance or causal claims.
+
+[Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project4/docs/lag_uncertainty_model_averaging.pdf) · [Executive summary](https://github.com/jsjaramillod/Time-Series/blob/main/project4/EXECUTIVE_SUMMARY.md) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project4/notebooks/project04_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project4)
+
 #### Research designs in progress
 
-The remaining designs address lag uncertainty and Bayesian model averaging (04), GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
+The remaining designs address GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
 
 ---
 

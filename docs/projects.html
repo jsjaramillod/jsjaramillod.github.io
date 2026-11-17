@@ -180,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="featured-portfolio">Featured Portfolio</h2>
 <section id="time-series-and-bayesian-econometrics" class="level3">
 <h3 class="anchored" data-anchor-id="time-series-and-bayesian-econometrics">Time Series and Bayesian Econometrics</h3>
-<p>A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02 and 03 provide executable Python packages, scientific controls, notebooks, and research reports. Later projects remain research designs.</p>
+<p>A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02-04 provide executable Python packages, scientific controls, notebooks, and research reports. Projects 05-08 remain research designs.</p>
 <p><a href="https://github.com/jsjaramillod/Time-Series">Browse the repository</a> or examine the completed work below.</p>
 <section id="bayesian-learning" class="level4">
 <h4 class="anchored" data-anchor-id="bayesian-learning">Bayesian learning and posterior prediction</h4>
@@ -203,9 +203,17 @@ ul.task-list li input[type="checkbox"] {
 <p>Responses are checked through companion matrices, recursion, controlled shock paths, and an independent linear filter. The object-oriented package records seeds, initial conditions, burn-in, numerical errors, and artifact checksums.</p>
 <p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project3/docs/persistence_shock_propagation.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project3/EXECUTIVE_SUMMARY.md">Executive summary</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project3/notebooks/project03_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project3">Code and reproduction</a></p>
 </section>
+<section id="lag-uncertainty" class="level4">
+<h4 class="anchored" data-anchor-id="lag-uncertainty">Lag uncertainty and Bayesian model averaging</h4>
+<p><strong>Project 04.</strong> How much does the lag-order decision affect what we learn about persistence and shock transmission?</p>
+<p>The study compares AR(1)-AR(8) on <strong>192 identical targets</strong> from a supplied 200-observation series. Under the primary prior, AR(2) receives <strong>71.54% posterior model probability</strong>, while other orders retain meaningful weight. The model-averaged coefficient-sum mean is <strong>0.8478</strong>, with a central 90% interval of <strong>[0.7901, 0.9029]</strong>; fixed AR(8) gives <strong>0.8008</strong>, with interval <strong>[0.7276, 0.8739]</strong>.</p>
+<p>Between-model uncertainty contributes <strong>10.38%</strong> of the primary coefficient-sum variance. Across coefficient-prior sensitivities, AR(2)’s weight ranges from <strong>60.01% to 80.96%</strong>, while model-averaged means remain between <strong>0.8430 and 0.8504</strong>. Finite shock responses preserve parameter and model uncertainty, with pointwise intervals and explicit root-stability checks.</p>
+<p>All 24 main fits have an independent retained-array replay in the recorded environment. Chib evidence is checked against numerical integration, including scalar tail calculations that distinguish zero sampled events from zero probability. The series’ generating process and economic identity remain unverified; the findings are conditional inference rather than forecast-performance or causal claims.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project4/docs/lag_uncertainty_model_averaging.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project4/EXECUTIVE_SUMMARY.md">Executive summary</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project4/notebooks/project04_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project4">Code and reproduction</a></p>
+</section>
 <section id="research-designs-in-progress" class="level4">
 <h4 class="anchored" data-anchor-id="research-designs-in-progress">Research designs in progress</h4>
-<p>The remaining designs address lag uncertainty and Bayesian model averaging (04), GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the <a href="https://github.com/jsjaramillod/Time-Series#projects-and-current-status">project catalog</a> for scope and status.</p>
+<p>The remaining designs address GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the <a href="https://github.com/jsjaramillod/Time-Series#projects-and-current-status">project catalog</a> for scope and status.</p>
 <hr>
 </section>
 </section>
