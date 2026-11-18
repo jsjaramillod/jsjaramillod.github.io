@@ -26,4 +26,4 @@ Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with
 
 ## Applied work
 
-My applied portfolio connects Bayesian inference with economic questions and reproducible computation. Recent studies examine [monetary policy and recession risk](projects.qmd#monetary-policy), [persistence and shock propagation](projects.qmd#shock-propagation), and [lag uncertainty and model averaging](projects.qmd#lag-uncertainty), with research reports, executed notebooks, and numerical controls.
+My applied portfolio connects Bayesian inference with economic questions and reproducible computation. Recent studies examine [monetary policy and recession risk](projects.qmd#monetary-policy), [persistence and shock propagation](projects.qmd#shock-propagation), [lag uncertainty and model averaging](projects.qmd#lag-uncertainty), and [U.S. GDP growth at risk](projects.qmd#gdp-growth-at-risk), with research reports, executed notebooks, and numerical controls.

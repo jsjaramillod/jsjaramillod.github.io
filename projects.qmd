@@ -10,7 +10,7 @@ The time-series studies below distinguish implemented results from research desi
 
 ### Time Series and Bayesian Econometrics
 
-A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02-04 provide executable Python packages, scientific controls, notebooks, and research reports. Projects 05-08 remain research designs.
+A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02-05 provide executable Python packages, scientific controls, notebooks, and research reports. Projects 06-08 remain research designs.
 
 [Browse the repository](https://github.com/jsjaramillod/Time-Series) or examine the completed work below.
 
@@ -56,9 +56,19 @@ All 24 main fits have an independent retained-array replay in the recorded envir
 
 [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project4/docs/lag_uncertainty_model_averaging.pdf) · [Executive summary](https://github.com/jsjaramillod/Time-Series/blob/main/project4/EXECUTIVE_SUMMARY.md) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project4/notebooks/project04_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project4)
 
+#### U.S. GDP growth at risk {#gdp-growth-at-risk}
+
+**Project 05.** How well do GDP forecasts describe the downside, especially after a contraction?
+
+Across 86 forecasts of four-quarter U.S. growth, a random walk with drift had the lowest error for average growth. A trend AR(4) delivered a better downside forecast when scored on the fifth percentile. Its quantile loss averaged **0.419**, compared with **0.457** for drift. Growth still fell below its downside threshold **eight times in 86 forecasts**, concentrated in the financial crisis and the pandemic.
+
+One forecast explains **57% of the AR's total squared annual error**. After the contraction in 2020Q2, the model projected another **11.50% decline** over the following year. GDP grew **11.68%** in log terms. The study uses historical GDP release dates and revised observations, and tests how retaining those pandemic quarters affects subsequent risk estimates.
+
+[Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project5/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project5/docs/gdp_growth_at_risk.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project5/notebooks/project05_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project5)
+
 #### Research designs in progress
 
-The remaining designs address GDP distributions and growth at risk (05), payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
+The remaining designs address payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
 
 ---
 
