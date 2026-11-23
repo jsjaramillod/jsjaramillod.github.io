@@ -10,7 +10,7 @@ The time-series studies below distinguish implemented results from research desi
 
 ### Time Series and Bayesian Econometrics
 
-A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02-05 provide executable Python packages, scientific controls, notebooks, and research reports. Projects 06-08 remain research designs.
+A sequence of studies in Bayesian learning, policy-response inference, recession probabilities, and dynamic shock transmission. The first project has an existing analysis notebook; Projects 02-06 provide executable Python packages, scientific controls, notebooks, and research reports. Projects 07-08 remain research designs.
 
 [Browse the repository](https://github.com/jsjaramillod/Time-Series) or examine the completed work below.
 
@@ -66,9 +66,19 @@ One forecast explains **57% of the AR's total squared annual error**. After the 
 
 [Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project5/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project5/docs/gdp_growth_at_risk.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project5/notebooks/project05_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project5)
 
+#### Forecasting U.S. payrolls {#payroll-forecasts}
+
+**Project 06.** What does a labor-market analyst gain from adding production, prices and financial markets to employment history?
+
+Across 216 monthly U.S. payroll releases from 2007 through 2024, adding industrial production and CPI **reduced root mean squared error by 24.7%**. Adding the S&P 500 and the Treasury spread reduced it a further **0.14%**. The financial indicators helped more with the probability of a job loss. The Brier score improved from 0.150 to 0.141.
+
+The five-variable model's 90% interval covered 96.3% of first announcements, yet **all three models missed every release from March through June 2020**. Those four months accounted for 91.2% of the five-variable model's total squared error. The study uses historical publication dates and revised inputs, scores both first and revised payroll estimates, and examines how the pandemic history changes the risk assigned to April 2026.
+
+[Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/payroll_forecasts.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project6/notebooks/project06_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project6)
+
 #### Research designs in progress
 
-The remaining designs address payroll forecasts with macroeconomic information (06), employment forecasts through extreme episodes (07), and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
+The remaining designs address employment forecasts through extreme episodes (07) and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
 
 ---
 
