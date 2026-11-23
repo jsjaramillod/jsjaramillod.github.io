@@ -68,11 +68,11 @@ One forecast explains **57% of the AR's total squared annual error**. After the 
 
 #### Forecasting U.S. payrolls {#payroll-forecasts}
 
-**Project 06.** What does a labor-market analyst gain from adding production, prices and financial markets to employment history?
+**Project 06.** In my doctoral time-series course, my model put the April 2026 U.S. payroll gain at **61,140 jobs**. The first announcement was **+115,000**, a miss of 53,860. That result prompted two questions. Which indicators improve accuracy over many months? How much does the treatment of the pandemic change the answer?
 
-Across 216 monthly U.S. payroll releases from 2007 through 2024, adding industrial production and CPI **reduced root mean squared error by 24.7%**. Adding the S&P 500 and the Treasury spread reduced it a further **0.14%**. The financial indicators helped more with the probability of a job loss. The Brier score improved from 0.150 to 0.141.
+Across 216 monthly releases from 2007 through 2024, adding industrial production and CPI to employment history reduced root mean squared error by **24.7%**. Adding equities and the Treasury spread reduced it a further **0.14%**. All three models missed the four first announcements from March through June 2020 with their 90% intervals.
 
-The five-variable model's 90% interval covered 96.3% of first announcements, yet **all three models missed every release from March through June 2020**. Those four months accounted for 91.2% of the five-variable model's total squared error. The study uses historical publication dates and revised inputs, scores both first and revised payroll estimates, and examines how the pandemic history changes the risk assigned to April 2026.
+The original estimate came closer in April than either five-variable refit. Re-estimating with the same smoothing rule gave **+46,436** jobs, while retaining the pandemic observations gave **−141,062**. In a separate comparison using identical data and model settings, smoothing cut average absolute error from **226,000 to 146,000 jobs** over 34 post-pandemic releases. All 34 were gains. The historical evaluation aligns publication dates and uses revised inputs.
 
 [Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/payroll_forecasts.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project6/notebooks/project06_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project6)
 
