@@ -26,4 +26,6 @@ Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with
 
 ## Applied work
 
-My applied portfolio connects Bayesian inference with economic questions and reproducible computation. Recent studies examine [monetary policy and recession risk](projects.qmd#monetary-policy), [persistence and shock propagation](projects.qmd#shock-propagation), [lag uncertainty and model averaging](projects.qmd#lag-uncertainty), [U.S. GDP growth at risk](projects.qmd#gdp-growth-at-risk), and [U.S. payroll forecasts](projects.qmd#payroll-forecasts). The payroll study compares what employment history, production and financial data reveal before the next jobs report.
+I revisit forecasts and models from my doctoral time-series course to see which conclusions hold up against data. A model of [PGA scores](projects.qmd#bayesian-learning) matched the average round yet assigned a 30% chance to a high score that occurred only 9% of the time. For [U.S. GDP](projects.qmd#gdp-growth-at-risk), my revised model reduced average annual forecast error by 5.6% over 78 matched dates. The original method was more accurate over the 13 post-pandemic dates.
+
+The [portfolio](projects.qmd) also follows the evidence on Federal Reserve policy, recession probabilities, persistent shocks, lag selection and [monthly payrolls](projects.qmd#payroll-forecasts).
