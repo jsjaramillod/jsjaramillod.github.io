@@ -10,7 +10,7 @@ The time-series studies below distinguish implemented results from research desi
 
 ### Time Series and Bayesian Econometrics
 
-These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes. Projects 07 and 08 describe research in progress.
+These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes. Project 08 describes research in progress.
 
 [Browse the repository](https://github.com/jsjaramillod/Time-Series) or examine the completed work below.
 
@@ -64,9 +64,19 @@ The original estimate came closer in April than either five-variable refit. Re-e
 
 [Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/payroll_forecasts.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project6/notebooks/project06_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project6)
 
-#### Research designs in progress
+#### Payroll forecasts after a shock {#payroll-volatility}
 
-The remaining designs address employment forecasts through extreme episodes (07) and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the [project catalog](https://github.com/jsjaramillod/Time-Series#projects-and-current-status) for scope and status.
+**Project 07.** In my doctoral time-series course I estimated that U.S. payrolls would rise by about **289,000 jobs** from March to September 2026. The September release showed a six-month gain of **394,000**. My model retained the pandemic observations and estimated that shocks in March 2020 had about **104 times their usual variance**. The assignment left a question open. Would smoothing those observations have produced a better forecast at the same six-month horizon?
+
+Across **28 post-pandemic forecast dates**, the model with temporary volatility cut root mean squared error from **611,000 to 473,000 jobs** on revised employment data. Smoothing the training history and starting each forecast with the latest observed conditions did slightly better at **459,000**. All 28 periods ended in gains.
+
+The answer changed for someone forecasting the sum of the initial monthly jobs announcements. Temporary volatility then had the lowest error of the three statistical models at **665,000 jobs**. A simple rule that repeated the previous six-month gain did better still at **515,000**.
+
+[Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/payroll_after_shocks.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project7/notebooks/project07_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project7)
+
+#### Research design in progress
+
+Project 08 asks what common factors reveal about economic activity and how to interpret structural shocks. See the [project design](https://github.com/jsjaramillod/Time-Series/tree/main/project8).
 
 ---
 

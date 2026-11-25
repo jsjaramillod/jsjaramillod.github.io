@@ -180,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="featured-portfolio">Featured Portfolio</h2>
 <section id="time-series-and-bayesian-econometrics" class="level3">
 <h3 class="anchored" data-anchor-id="time-series-and-bayesian-econometrics">Time Series and Bayesian Econometrics</h3>
-<p>These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes. Projects 07 and 08 describe research in progress.</p>
+<p>These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes. Project 08 describes research in progress.</p>
 <p><a href="https://github.com/jsjaramillod/Time-Series">Browse the repository</a> or examine the completed work below.</p>
 <section id="bayesian-learning" class="level4">
 <h4 class="anchored" data-anchor-id="bayesian-learning">Bayesian learning and posterior prediction</h4>
@@ -219,9 +219,16 @@ ul.task-list li input[type="checkbox"] {
 <p>The original estimate came closer in April than either five-variable refit. Re-estimating with the same smoothing rule gave <strong>+46,436</strong> jobs, while retaining the pandemic observations gave <strong>−141,062</strong>. In a separate comparison using identical data and model settings, smoothing cut average absolute error from <strong>226,000 to 146,000 jobs</strong> over 34 post-pandemic releases. All 34 were gains. The historical evaluation aligns publication dates and uses revised inputs.</p>
 <p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/executive_summary.pdf">Executive brief (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project6/docs/payroll_forecasts.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project6/notebooks/project06_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project6">Code and reproduction</a></p>
 </section>
-<section id="research-designs-in-progress" class="level4">
-<h4 class="anchored" data-anchor-id="research-designs-in-progress">Research designs in progress</h4>
-<p>The remaining designs address employment forecasts through extreme episodes (07) and common factors and structural interpretation (08). Their implementations and reproduced results are pending; see the <a href="https://github.com/jsjaramillod/Time-Series#projects-and-current-status">project catalog</a> for scope and status.</p>
+<section id="payroll-volatility" class="level4">
+<h4 class="anchored" data-anchor-id="payroll-volatility">Payroll forecasts after a shock</h4>
+<p><strong>Project 07.</strong> In my doctoral time-series course I estimated that U.S. payrolls would rise by about <strong>289,000 jobs</strong> from March to September 2026. The September release showed a six-month gain of <strong>394,000</strong>. My model retained the pandemic observations and estimated that shocks in March 2020 had about <strong>104 times their usual variance</strong>. The assignment left a question open. Would smoothing those observations have produced a better forecast at the same six-month horizon?</p>
+<p>Across <strong>28 post-pandemic forecast dates</strong>, the model with temporary volatility cut root mean squared error from <strong>611,000 to 473,000 jobs</strong> on revised employment data. Smoothing the training history and starting each forecast with the latest observed conditions did slightly better at <strong>459,000</strong>. All 28 periods ended in gains.</p>
+<p>The answer changed for someone forecasting the sum of the initial monthly jobs announcements. Temporary volatility then had the lowest error of the three statistical models at <strong>665,000 jobs</strong>. A simple rule that repeated the previous six-month gain did better still at <strong>515,000</strong>.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/executive_summary.pdf">Executive brief (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/payroll_after_shocks.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project7/notebooks/project07_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project7">Code and reproduction</a></p>
+</section>
+<section id="research-design-in-progress" class="level4">
+<h4 class="anchored" data-anchor-id="research-design-in-progress">Research design in progress</h4>
+<p>Project 08 asks what common factors reveal about economic activity and how to interpret structural shocks. See the <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project8">project design</a>.</p>
 <hr>
 </section>
 </section>
