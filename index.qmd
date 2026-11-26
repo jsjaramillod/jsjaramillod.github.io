@@ -29,3 +29,5 @@ Welcome. I am a Ph.D. candidate in Mathematics at the University of Oregon, with
 I revisit forecasts and models from my doctoral time-series course to see which conclusions hold up against data. A model of [PGA scores](projects.qmd#bayesian-learning) matched the average round yet assigned a 30% chance to a high score that occurred only 9% of the time. For [U.S. GDP](projects.qmd#gdp-growth-at-risk), my revised model reduced average annual forecast error by 5.6% over 78 matched dates. The original method was more accurate over the 13 post-pandemic dates.
 
 The [portfolio](projects.qmd) also follows the evidence on Federal Reserve policy, recession probabilities, persistent shocks, lag selection and [monthly payrolls](projects.qmd#payroll-forecasts). A [six-month employment study](projects.qmd#payroll-volatility) follows a doctoral forecast through its eventual release and tests whether keeping the pandemic observations improved later predictions.
+
+In a [study of 100 predictors](projects.qmd#common-signals), choosing how strongly to shrink coefficients on earlier data lowered forecast error by 1.67% relative to the best method from my assignment.

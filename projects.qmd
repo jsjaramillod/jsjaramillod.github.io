@@ -4,13 +4,13 @@ title: "Projects"
 
 This portfolio connects my mathematical training with applied work in time series, econometrics, causal inference, machine learning, and quantitative finance.
 
-The time-series studies below distinguish implemented results from research designs. Links provide the underlying code, analysis, and stated limitations.
+Each time-series study includes its data sources, methods and limitations.
 
 ## Featured Portfolio
 
 ### Time Series and Bayesian Econometrics
 
-These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes. Project 08 describes research in progress.
+These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes.
 
 [Browse the repository](https://github.com/jsjaramillod/Time-Series) or examine the completed work below.
 
@@ -74,9 +74,15 @@ The answer changed for someone forecasting the sum of the initial monthly jobs a
 
 [Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/payroll_after_shocks.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project7/notebooks/project07_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project7)
 
-#### Research design in progress
+#### What can 100 predictors tell us? {#common-signals}
 
-Project 08 asks what common factors reveal about economic activity and how to interpret structural shocks. See the [project design](https://github.com/jsjaramillod/Time-Series/tree/main/project8).
+**Project 08.** In my doctoral assignment, two principal components forecast an anonymous target more accurately than a regression using all 100 predictors. I reproduced all three original error scores, then asked whether keeping all the indicators and limiting the size of their coefficients could do better.
+
+I used 100 earlier outcomes to choose the ridge penalty and tested it on the same 100 final observations as the coursework. Root mean squared error fell from **97.22 to 95.60**, a **1.67% reduction**. The advantage appeared in both halves of the test period.
+
+The assignment also examined what moves together in the economy. Correctly matching eight income adjustments to the income series raised its estimated loading on a U.S. activity factor from **0.206 to 0.323**. Four equity ETFs also shared a same-day market movement in a newly documented price sample. In a separate quarterly model, the original **98.25%** posterior probability that hours fell immediately after a favorable technology shock was **98.10%** in the refit. The interpretation assumes that only technology changes productivity permanently.
+
+[Executive brief (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project8/docs/executive_summary.pdf) · [Research report (PDF)](https://github.com/jsjaramillod/Time-Series/blob/main/project8/docs/common_signals.pdf) · [Executed notebook](https://github.com/jsjaramillod/Time-Series/blob/main/project8/notebooks/project08_analysis.ipynb) · [Code and reproduction](https://github.com/jsjaramillod/Time-Series/tree/main/project8)
 
 ---
 

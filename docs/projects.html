@@ -175,12 +175,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This portfolio connects my mathematical training with applied work in time series, econometrics, causal inference, machine learning, and quantitative finance.</p>
-<p>The time-series studies below distinguish implemented results from research designs. Links provide the underlying code, analysis, and stated limitations.</p>
+<p>Each time-series study includes its data sources, methods and limitations.</p>
 <section id="featured-portfolio" class="level2">
 <h2 class="anchored" data-anchor-id="featured-portfolio">Featured Portfolio</h2>
 <section id="time-series-and-bayesian-econometrics" class="level3">
 <h3 class="anchored" data-anchor-id="time-series-and-bayesian-econometrics">Time Series and Bayesian Econometrics</h3>
-<p>These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes. Project 08 describes research in progress.</p>
+<p>These studies began with questions from my doctoral time-series course. Each follows a result from the original assignment through a replication or a test on additional outcomes.</p>
 <p><a href="https://github.com/jsjaramillod/Time-Series">Browse the repository</a> or examine the completed work below.</p>
 <section id="bayesian-learning" class="level4">
 <h4 class="anchored" data-anchor-id="bayesian-learning">Bayesian learning and posterior prediction</h4>
@@ -226,9 +226,12 @@ ul.task-list li input[type="checkbox"] {
 <p>The answer changed for someone forecasting the sum of the initial monthly jobs announcements. Temporary volatility then had the lowest error of the three statistical models at <strong>665,000 jobs</strong>. A simple rule that repeated the previous six-month gain did better still at <strong>515,000</strong>.</p>
 <p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/executive_summary.pdf">Executive brief (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project7/docs/payroll_after_shocks.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project7/notebooks/project07_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project7">Code and reproduction</a></p>
 </section>
-<section id="research-design-in-progress" class="level4">
-<h4 class="anchored" data-anchor-id="research-design-in-progress">Research design in progress</h4>
-<p>Project 08 asks what common factors reveal about economic activity and how to interpret structural shocks. See the <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project8">project design</a>.</p>
+<section id="common-signals" class="level4">
+<h4 class="anchored" data-anchor-id="common-signals">What can 100 predictors tell us?</h4>
+<p><strong>Project 08.</strong> In my doctoral assignment, two principal components forecast an anonymous target more accurately than a regression using all 100 predictors. I reproduced all three original error scores, then asked whether keeping all the indicators and limiting the size of their coefficients could do better.</p>
+<p>I used 100 earlier outcomes to choose the ridge penalty and tested it on the same 100 final observations as the coursework. Root mean squared error fell from <strong>97.22 to 95.60</strong>, a <strong>1.67% reduction</strong>. The advantage appeared in both halves of the test period.</p>
+<p>The assignment also examined what moves together in the economy. Correctly matching eight income adjustments to the income series raised its estimated loading on a U.S. activity factor from <strong>0.206 to 0.323</strong>. Four equity ETFs also shared a same-day market movement in a newly documented price sample. In a separate quarterly model, the original <strong>98.25%</strong> posterior probability that hours fell immediately after a favorable technology shock was <strong>98.10%</strong> in the refit. The interpretation assumes that only technology changes productivity permanently.</p>
+<p><a href="https://github.com/jsjaramillod/Time-Series/blob/main/project8/docs/executive_summary.pdf">Executive brief (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project8/docs/common_signals.pdf">Research report (PDF)</a> · <a href="https://github.com/jsjaramillod/Time-Series/blob/main/project8/notebooks/project08_analysis.ipynb">Executed notebook</a> · <a href="https://github.com/jsjaramillod/Time-Series/tree/main/project8">Code and reproduction</a></p>
 <hr>
 </section>
 </section>
